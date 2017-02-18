@@ -1,0 +1,93 @@
+/* GLOBAL */
+body {
+	margin: 0;
+	font-family: 'Cabin', sans-serif;
+	line-height: 1.5;
+}
+
+.wrapper {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.fb-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+section {
+	padding: 50px 0;
+}
+
+.button {
+	display: inline-block;
+	margin: 20px auto 0 auto;
+	padding: 15px 50px;
+	border: 2px solid rgb(46,51,57);
+	border-radius: 50px;
+	font-size: 14px;
+	color: white;
+	background: rgb(46,51,57);
+	transition: color 0.4s, background 0.4s;
+}
+
+.button:hover {
+	color: rgb(46,51,57);
+	background: white;
+}
+
+/* HEADER */
+header {
+	height: 100vh;
+	background: rgb(76,144,81);
+}
+
+header h1 {
+	margin: 0;
+}
+
+/* SECTION: ABOUT */
+
+.about {
+	background: rgb(247,247,247);
+}
+
+.about__image {
+	width: calc(40% - 50px);
+	padding-left: 50px;
+}
+
+.about__text {
+	width: calc(60% - 100px);
+	padding: 0 50px;
+}
+
+.about__text blockquote {
+	border-left: 5px solid rgb(46,51,57);
+	padding: 0 15px;
+}
+
+/* SECTION: ICONS */
+
+.icons {
+	text-align: center;
+}
+
+.icons h2 {
+	width: 100%;
+}
+
+.icons__single {
+	width: calc(33.3% - 40px);
+	padding: 0 20px;
+}
+
+/* SECTION: VIDEO */
+.video {
+	background: rgb(247,247,247);
+}
+
+.video iframe {
+	display: block;
+	margin: 0 auto;
+}
