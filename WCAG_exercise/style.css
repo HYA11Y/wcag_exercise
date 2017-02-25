@@ -110,12 +110,12 @@ nav a:hover {
 }
 
 .about__image {
-	width: calc(40% - 50px);
+	width: 40%;
 	padding-left: 50px;
 }
 
 .about__text {
-	width: calc(60% - 100px);
+	width: 60%;
 	padding: 0 50px;
 }
 
@@ -135,7 +135,7 @@ nav a:hover {
 }
 
 .icons__single {
-	width: calc(33.3% - 40px);
+	width: 33.3%;
 	padding: 0 20px;
 }
 
