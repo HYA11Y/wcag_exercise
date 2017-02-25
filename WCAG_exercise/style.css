@@ -1,4 +1,13 @@
 /* GLOBAL */
+
+*, *:before, *:after {
+	box-sizing: border-box;;
+}
+
+html {
+	font-size: 100%;
+}
+
 body {
 	margin: 0;
 	font-family: 'Cabin', sans-serif;
@@ -25,7 +34,7 @@ section {
 	padding: 15px 50px;
 	border: 2px solid rgb(46,51,57);
 	border-radius: 50px;
-	font-size: 14px;
+	font-size: .875rem;
 	color: white;
 	background: rgb(46,51,57);
 	transition: color 0.4s, background 0.4s;
@@ -38,12 +47,60 @@ section {
 
 /* HEADER */
 header {
-	height: 100vh;
-	background: rgb(76,144,81);
+	height: 80vh;
+	background: url(images/cacti_hero.jpg);
+	background-size: 100%;
+	background-position: bottom;
+	background-repeat: none;
+}
+
+.nav-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 25px 0 0 0;
 }
 
 header h1 {
 	margin: 0;
+	position: relative;
+}
+
+header h1::after {
+	content: "";
+	height: 5px;
+	width: 100px;
+	background-color: #2b2b2b;
+	position: absolute;
+	bottom: -8px;
+	left: 0;
+}
+
+nav {
+	width: 25%;
+}
+
+nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+nav li {
+	list-style-type: none;
+}
+
+nav a {
+	text-decoration: none;
+	color: black;
+}
+
+nav a:hover {
+	color: rgb(76,144,81);
 }
 
 /* SECTION: ABOUT */
@@ -90,4 +147,80 @@ header h1 {
 .video iframe {
 	display: block;
 	margin: 0 auto;
+}
+
+/* SECTION: GALLERY */
+
+.gallery {
+	text-align: center;
+}
+
+.container-gallery {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.container-gallery img {
+	width: 30%;
+	height: 100%;
+	border: 2px solid #2b2b2b;
+}
+
+/* SECTION CONTACT US */
+
+.form {
+	text-align: center;
+	background: #2e3339;
+}
+
+.form h2, .form p {
+	color: white;
+}
+
+form {
+	width: 65%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.form-left, .form-right {
+	width: 47%;
+}
+
+input, textarea {
+	display: block;
+	width: 100%;
+	border: 1px solid #2b2b2b;
+	padding: 10px 15px;
+	margin: 12px 0;
+	font-size: .875rem;
+}
+
+textarea {
+	height: 140px;
+}
+
+input[type="submit"] {
+	width: 50%;
+	font-weight: bold;
+	background-color: #73d970;
+	color: #fff;
+	border-radius: 5px;
+}
+
+/* SECTION: FOOTER */
+
+footer {
+	background: #2b2b2b;
+	color: #fff;
+	font-size: 1.5rem;
+	text-align: center;
+	padding: 25px 0;
+}
+
+footer i {
+	padding: 0 5px;
 }

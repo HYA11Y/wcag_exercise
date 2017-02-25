@@ -11,17 +11,26 @@
 	<!-- HEADER AND NAV -->
 	<header>
 		<div class="wrapper">
-			<nav>
-			</nav>
-			<h1>Header</h1>
-		</div>
+			<div class="nav-wrapper">
+				<h1>Green Thumb</h1>
+				<nav>
+					<ul>
+						<li><a href="#about">About Us</a></li>
+						<li><a href="#services">Services</a></li>
+						<li><a href="#contact">Contact</a></li>
+						<li><a href="https://www.amazon.com/Cacti-Succulent-Plants/b?ie=UTF8&node=3745941"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+						<li><a href="whttps://www.instagram.com/explore/tags/cacti/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+					</ul>
+				</nav>
+			</div> <!-- /.nav-wrapper -->
+		</div> <!-- /.wrapper -->
 	</header>
 	<!-- ABOUT SECTION -->
-	<section class="about">
+	<section class="about" id="about">
 		<div class="wrapper">
 			<div class="fb-wrapper">
 				<div class="about__image">
-					<img src="images/potted_cactus.jpg" alt="[photo] potted cactus">
+					<img src="images/potted_cactus.jpg" alt="This is a photo of a potted cactus.">
 				</div> <!-- /.about__image -->
 					<div class="about__text">
 						<h2>About Us</h2>
@@ -60,22 +69,54 @@
 			<span href="" class="button">READ MORE</span>
 		</div> <!-- /.wrapper -->
 	</section> <!-- /.icons -->
+
 	<!-- VIDEO SECTION -->
 	<section class="video">
 		<div class="wrapper">
 			<iframe width="1100" height="600" src="https://www.youtube.com/embed/I8W4LyIXINE" frameborder="0" allowfullscreen></iframe>
 		</div> <!-- /.wrapper -->
 	</section> <!-- /.video -->
+
+	<!-- GALLERY SECTION -->
+	<section class="gallery">
+		<div class="wrapper">
+			<h2>DIY Cactus Containers</h2>
+			<p>Here are a few ways to repurpose household items as cacti planters!</p>
+			<div class="container-gallery">
+				<img src="images/cactus-teacup.jpg" />
+				<img src="images/cactus-painted.jpg" />
+				<img src="images/cactus-mason.jpg" />
+			</div> <!-- /.container-gallery -->
+		</div> <!-- /.wrapper -->
+	</section>
+
 	<!-- FORM SECTION -->
 	<section class="form">
 		<div class="wrapper">
-			
+			<h2>Contact Us</h2>
+			<p>If you have questions or comments please feel free to get in touch!</p>
+			<form>
+				<div class="form-left">
+					<input type="text" placeholder="First Name"/>
+					<input type="text" placeholder="Last Name" />
+					<input type="tel" placeholder="Phone Number" />
+					<input type="email" placeholder="Email" />
+				</div> <!-- /.form-left -->
+				<div class="form-right">
+					<textarea placeholder="Your message..."></textarea>
+					<input type="submit" value="Submit"/>
+				</div> <!-- /.form-right -->
+
+			</form>
+
 		</div> <!-- /.wrapper -->
 	</section> <!-- /.form -->
 	<!-- FOOTER -->
 	<footer>
 		<div class="wrapper">
-			
+			<i class="fa fa-twitter" aria-hidden="true"></i>
+			<i class="fa fa-instagram" aria-hidden="true"></i>
+			<i class="fa fa-pinterest" aria-hidden="true"></i>
 		</div> <!-- /.wrapper -->
 	</footer>
 </body>
