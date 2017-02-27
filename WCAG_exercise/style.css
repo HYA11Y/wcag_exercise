@@ -12,6 +12,7 @@ body {
 	margin: 0;
 	font-family: 'Cabin', sans-serif;
 	line-height: 1.5;
+	position: relative;
 }
 
 svg {
@@ -144,6 +145,45 @@ nav a:hover {
 	padding: 0 20px;
 }
 
+.modal {
+	display: none;
+	z-index: 200;
+	position: absolute;
+	top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+	background: #fff;
+	padding: 25px;
+}
+
+.modal p {
+	width: 75%;
+	margin: 0 auto;
+	padding-bottom: 20px;
+}
+
+.modal button {
+	border-radius: 5px;
+	text-transform: uppercase;
+	padding: 10px 15px;
+	font-size: 1rem;
+	margin: 0 5px;
+}
+
+.modal-overlay {
+	display: none;
+  position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+  z-index: 100;
+  background-color: rgb(0,0,0); /* fallback color */
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s;
+}
+
 /* SECTION: VIDEO */
 .video {
 	background: rgb(247,247,247);
@@ -189,6 +229,7 @@ form {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	text-align: left;
 }
 
 .form-left, .form-right {
@@ -205,8 +246,17 @@ input, textarea {
 }
 
 textarea {
-	height: 140px;
+	height: 200px;
 }
+
+input[type="text"], input[type="email"], input[type="tel"], textarea {
+		margin-top: 0;
+}
+
+form label {
+	color: white;
+}
+
 
 input[type="submit"] {
 	width: 50%;
@@ -214,6 +264,15 @@ input[type="submit"] {
 	background-color: #73d970;
 	color: #fff;
 	border-radius: 5px;
+	margin-top: 25px;
+}
+
+p.error-alert {
+	display: none;
+	background: #fff;
+	color: red;
+	padding: 5px 10px;
+	border-radius: 8px;
 }
 
 /* SECTION: FOOTER */

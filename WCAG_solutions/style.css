@@ -1,0 +1,313 @@
+/* GLOBAL */
+
+*, *:before, *:after {
+	box-sizing: border-box;;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: 'Cabin', sans-serif;
+	line-height: 1.5;
+	position: relative;
+}
+
+svg {
+	width: 100px;
+	height: auto;
+}
+
+.wrapper {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.fb-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+section {
+	padding: 50px 0;
+}
+
+.button {
+	display: inline-block;
+	margin: 20px auto 0 auto;
+	padding: 15px 50px;
+	border: 2px solid rgb(46,51,57);
+	border-radius: 50px;
+	font-size: .875rem;
+	color: white;
+	background: rgb(46,51,57);
+	transition: color 0.4s, background 0.4s;
+}
+
+.button:hover {
+	color: rgb(46,51,57);
+	background: white;
+}
+
+/* VISUALLY HIDDEN */
+.visually-hidden {
+	position: absolute;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* SKIP LINKS */
+.skip-link {
+	position: absolute;
+	top: 0;
+	left: -1000px;
+	background: #fff;
+	padding: 8px;
+	z-index: 100;
+}
+
+.skip-link:focus {
+	left: 0;
+}
+
+/* HEADER */
+header {
+	height: 80vh;
+	background: url(images/cacti_hero.jpg);
+	background-size: 100%;
+	background-position: bottom;
+	background-repeat: none;
+}
+
+.nav-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 25px 0 0 0;
+}
+
+header h1 {
+	margin: 0;
+	position: relative;
+}
+
+header h1::after {
+	content: "";
+	height: 5px;
+	width: 100px;
+	background-color: #2b2b2b;
+	position: absolute;
+	bottom: -8px;
+	left: 0;
+}
+
+nav {
+	width: 25%;
+}
+
+nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+nav li {
+	list-style-type: none;
+}
+
+nav a {
+	text-decoration: none;
+	color: black;
+}
+
+nav a:hover {
+	color: rgb(76,144,81);
+}
+
+/* SECTION: ABOUT */
+
+.about {
+	background: rgb(247,247,247);
+}
+
+.about__image {
+	width: 40%;
+	padding-left: 50px;
+}
+
+.about__text {
+	width: 60%;
+	padding: 0 50px;
+}
+
+.about__text blockquote {
+	border-left: 5px solid rgb(46,51,57);
+	padding: 0 15px;
+}
+
+/* SECTION: ICONS */
+
+.icons {
+	text-align: center;
+}
+
+.icons h2 {
+	width: 100%;
+}
+
+.icons__single {
+	width: 33.3%;
+	padding: 0 20px;
+}
+
+.modal {
+	display: none;
+	z-index: 200;
+	position: absolute;
+	top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+	background: #fff;
+	padding: 25px;
+}
+
+.modal p {
+	width: 75%;
+	margin: 0 auto;
+	padding-bottom: 20px;
+}
+
+.modal button {
+	border-radius: 5px;
+	text-transform: uppercase;
+	padding: 10px 15px;
+	font-size: 1rem;
+	margin: 0 5px;
+}
+
+.modal-overlay {
+	display: none;
+  position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+  z-index: 100;
+  background-color: rgb(0,0,0); /* fallback color */
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s;
+}
+
+/* SECTION: VIDEO */
+.video {
+	background: rgb(247,247,247);
+}
+
+.video iframe {
+	display: block;
+	margin: 0 auto;
+}
+
+/* SECTION: GALLERY */
+
+.gallery {
+	text-align: center;
+}
+
+.container-gallery {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.container-gallery img {
+	width: 30%;
+	height: 100%;
+	border: 2px solid #2b2b2b;
+}
+
+/* SECTION CONTACT US */
+
+.form {
+	text-align: center;
+	background: #2e3339;
+}
+
+.form h2, .form p {
+	color: white;
+}
+
+form {
+	width: 65%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	text-align: left;
+}
+
+.form-left, .form-right {
+	width: 47%;
+}
+
+input, textarea {
+	display: block;
+	width: 100%;
+	border: 1px solid #2b2b2b;
+	padding: 10px 15px;
+	margin: 12px 0;
+	font-size: .875rem;
+}
+
+textarea {
+	height: 200px;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], textarea {
+		margin-top: 0;
+}
+
+form label {
+	color: white;
+}
+
+
+input[type="submit"] {
+	width: 50%;
+	font-weight: bold;
+	background-color: #73d970;
+	color: #fff;
+	border-radius: 5px;
+	margin-top: 25px;
+}
+
+p.error-alert {
+	display: none;
+	background: #fff;
+	color: red;
+	padding: 5px 10px;
+	border-radius: 8px;
+}
+
+/* SECTION: FOOTER */
+
+footer {
+	background: #2b2b2b;
+	color: #fff;
+	font-size: 1.5rem;
+	text-align: center;
+	padding: 25px 0;
+}
+
+footer i {
+	padding: 0 5px;
+}

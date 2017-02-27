@@ -12,6 +12,15 @@ Success 3.1.1 Language of Page (Level A)
 </head>
 <body>
 	<!-- HEADER AND NAV -->
+	<!--
+		Create skip links that help users navigating with a keyboard or other form of assistive technology to bypass blocks of repeated content (such as a global navigation, sidebar, or submenu).
+	 -->
+	<a href="#main" class="skip-link">Skip to main content.</a>
+	<!--
+	 SUCCESS 2.4.1 Bypass Blocks (Level A)
+	 FURTHER READING: http://webaim.org/techniques/skipnav/
+	-->
+
 	<header>
 		<div class="wrapper">
 			<div class="nav-wrapper">
@@ -21,165 +30,220 @@ Success 3.1.1 Language of Page (Level A)
 						<li><a href="#about">About Us</a></li>
 						<li><a href="#services">Services</a></li>
 						<li><a href="#contact">Contact</a></li>
-						<li><a href="https://www.amazon.com/Cacti-Succulent-Plants/b?ie=UTF8&node=3745941"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-						<li><a href="whttps://www.instagram.com/explore/tags/cacti/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+						<li>
+							<a href="https://www.amazon.com/Cacti-Succulent-Plants/b?ie=UTF8&node=3745941">
+								<!--
+									The nav uses icons in place of text. This means screen readers will not be able to identify the nav item. Furthermore, the Font Awesome icons already have Aria-hidden="true" applied to them, which means they are invisible to screen readers. We need to add supplementary text and hide it to maintain the integrity of the design by applying the "visually-hidden" class.
+								 -->
+								<span class="visually-hidden">Go to your shopping cart</span>
+								<i class="fa fa-shopping-cart" aria-hidden="true" title="Shopping Cart"></i>
+							</a>
+							<!--
+ 							SUCCESS 1.1.1 Non-text Content (Level A)
+ 							FURTHER READING: Inclusive Design Patterns, Heydon Pickering.
+ 						 -->
+						</li>
+						<li>
+							<a href="https://www.instagram.com/explore/tags/cacti/?hl=en">
+								<span class="visually-hidden">Visit our Instagram page.</span>
+								<i class="fa fa-instagram" aria-hidden="true" title="Instagram"></i>
+							</a>
+						</li>
 					</ul>
 				</nav>
 			</div> <!-- /.nav-wrapper -->
 		</div> <!-- /.wrapper -->
 	</header>
-	<!-- ABOUT SECTION -->
-	<section class="about" id="about">
-		<div class="wrapper">
-			<div class="fb-wrapper">
-				<div class="about__image">
 
-					<!-- 
-					Always consider the purpose of an image before writing the alt text. Because this image is purely decorative, an empty alt string is acceptable. The addition of the true aria-hidden attribute hides this tag from assistive technology reading the page.
-					-->
-					<img src="images/potted_cactus.jpg" alt=" " aria-hidden="true">
-					<!-- 
-					SUCCESS 1.1.1 Non-text Content (Level A)
-					FURTHER READING: http://webaim.org/techniques/alttext/
-					-->
+	<main id="main">
+		<!-- ABOUT SECTION -->
+		<section class="about" id="about">
+			<div class="wrapper">
+				<div class="fb-wrapper">
+					<div class="about__image">
 
-				</div> <!-- /.about__image -->
-					<div class="about__text">
-						<h2>About Us</h2>
-
-						<!--  
-						Be aware that screenreader users can navigate a page with a list of links. Because links are taken out of context to make this list, each one should have meaning on its own.
+						<!--
+						Always consider the purpose of an image before writing the alt text. Because this image is purely decorative, an empty alt string is acceptable. The addition of the true aria-hidden attribute hides this tag from assistive technology reading the page.
 						-->
-						<p>
-							Cactus is a type of plant that can store large amounts of water and survive in extremely hot and dry habitats. There are around 2000 different species of cactus that differ in size, shape, color and type of habitat. Almost all cacti are native to deserts and dry regions of South and North America.<a href="">Learn more about the variaties of cactus</a>. Or, if you're more into the cactus's living conditions, <a href="https://en.wikipedia.org/wiki/Desert">check out Wikipedia's desert page</a>.
-						</p>
-						<!-- 
-						FAILURE: 2.4.4 Link Purpose (Level A)
-						TECHNIQUE G91: Providing link text that describes the purpose of a link 
+						<img src="images/potted_cactus.jpg" alt=" " aria-hidden="true">
+						<!--
+						SUCCESS 1.1.1 Non-text Content (Level A)
+						FURTHER READING: http://webaim.org/techniques/alttext/
 						-->
 
-						<blockquote>
-							I bought a cactus. A week later it died. And I got depressed because I thought 'Damn I am less nurturing than a desert.'
-							<cite>Demetri Martin</cite>
-						</blockquote>
-					</div> <!-- /.about__text -->
-				</div> <!-- /.fb-wrapper -->
-		</div> <!-- /.wrapper -->
-	</section> <!-- /.about -->
-	<!-- ICONS SECTION -->
-	<section class="icons">
-		<div class="wrapper">
+					</div> <!-- /.about__image -->
+						<div class="about__text">
+							<h2>About Us</h2>
 
-			<h2>Our Services</h2>
-			<div class="fb-wrapper">
-				<div class="icons__single">
+							<!--
+							Be aware that screenreader users can navigate a page with a list of links. Because links are taken out of context to make this list, each one should have meaning on its own.
+							-->
+							<p>
+								Cactus is a type of plant that can store large amounts of water and survive in extremely hot and dry habitats. There are around 2000 different species of cactus that differ in size, shape, color and type of habitat. Almost all cacti are native to deserts and dry regions of South and North America.<a href="">Learn more about the variaties of cactus</a>. Or, if you're more into the cactus's living conditions, <a href="https://en.wikipedia.org/wiki/Desert">check out Wikipedia's desert page</a>.
+							</p>
+							<!--
+							FAILURE: 2.4.4 Link Purpose (Level A)
+							TECHNIQUE G91: Providing link text that describes the purpose of a link
+							-->
 
-					<!-- 
-					SVGs can be added to a page in multiple ways. In all cases, the same principles of how to make an image accessible apply. Ask yourself what the purpose of the SVG is, then provide the appropriate information in a non-visual format 
-					FURTHER READING: https://css-tricks.com/accessible-svgs/
-					-->
-					<img src="images/cactus_icon.svg" alt=" " aria-hidden="true">
+							<blockquote>
+								I bought a cactus. A week later it died. And I got depressed because I thought 'Damn I am less nurturing than a desert.'
+								<cite>Demetri Martin</cite>
+							</blockquote>
+						</div> <!-- /.about__text -->
+					</div> <!-- /.fb-wrapper -->
+			</div> <!-- /.wrapper -->
+		</section> <!-- /.about -->
+		<!-- ICONS SECTION -->
+		<section class="icons">
+			<div class="wrapper">
 
-					<!-- 
-					Headings must not jump levels (i.e. H2 - H4)
-					strong, em, and i elements must be used according to their specifications and not for their default styling
-					-->
-					<h3>Prickly Plants</h3>
-					<!--  
-					FAILURE 1.3.1 Info and Relationships (Level A)
-					TECHNIQUE G115 & H49 Using semantic elements to mark up structure
-					-->
-					<p>Cactus may look forbidding, but  K. Satchidanandan's poem, simply titled <i>Cactus</i>, imagines they have rich inner lives</p>.
-					<!--
-					SUCCESS 1.3.1 Info and Relationships (Level A)
-					TECHNIQUE G115 & H49 Using semantic elements to mark up structure
-					FURTHER READING: https://www.w3.org/TR/WCAG20-TECHS/G115.html
-									 https://www.w3.org/TR/WCAG20-TECHS/H49.html
-					-->
+				<h2>Our Services</h2>
+				<div class="fb-wrapper">
+					<div class="icons__single">
 
-				</div> <!-- /.icons__single -->
-				<div class="icons__single">
-					<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve">
-						<path stroke="#25083F" stroke-width="0.1932" stroke-miterlimit="10" d="M7.165,22.991c2.928-1.927,6.113-1.681,9.469,0l2.899,2.705  l2.512,6.377l2.899,5.218l3.285,2.319h10.049c6.957-1.546,13.913-1.546,20.87,0h11.981l4.251-3.672l3.478-7.536l4.445-4.251  c3.279-1.272,6.703-1.249,10.242-0.193l-8.889,3.672l-3.285,7.536l-3.478,7.15l-4.058,2.705l-8.889,1.159h-5.991l0.966,3.707  l-0.386,2.477l-3.092,2.126c0.819,5.364,0.405,10.088-1.739,13.913l-1.159,6.957l0.966,2.512c-2.111,6.3-7.975,7.002-9.276,0  l0.193-3.478l-1.353-5.411c-2.057-2.996-3.65-5.857-1.739-11.015l-0.966-3.672l-2.899-2.319l-0.58-4.251l0.193-1.932l-4.831,0.386  l-7.15-0.966l-6.184-5.024l-3.478-9.276l-1.932-4.638L7.165,22.991z" fill="#000000"/>
-					</svg>
-					<h3>Fatal Dehydration</h3>
-					<p>There is <em>so</em> little water in the desert that it is imperative to bring your own supply.</p>
-				</div> <!-- /.icons__single -->
-				<div class="icons__single">
-					<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve">
-						<path fill="#000000" stroke="#010101" stroke-width="3.1859" stroke-miterlimit="10" d="M18.235,26.369l2.994-2.869h1.622  l1.996,2.869v2.37l1.996,1.372l0.624,2.246l-1.123,2.994v2.37l-0.998,3.743l-2.495,4.616l-0.624,2.62l-0.25,3.119l5.489,2.121  l7.735-2.37l3.868-2.121l6.238-1.123l5.115,1.622l3.119,2.994l1.871,2.495l3.369,0.749l3.992-0.998l0.624-2.121l-1.372-8.484  l3.369-3.244l4.866,0.873l3.369,2.35l4.367,1.268l13.973,0.873c0.869,0.421,0.795,1.062,0,1.871l-2.869,2.246l-7.86,0.998  l-3.618-0.25l-7.486-2.869l-0.624,1.372l1.123,3.618v6.113c-0.945,2.043-2.672,3.426-5.365,3.992h-6.737l-8.234-1.747  c-2.319-1.758-4.579-3.472-7.735-5.864l-5.739,1.123l-8.484,5.24l-6.488,0.125l-4.491-0.25c-2.307-0.535-4.037-2.404-5.24-5.489  l1.747-7.61l4.117-8.109l0.998-1.747l-2.37-0.873l-3.369-0.499l-2.495,3.868l-1.123,0.125l2.745-4.242l-2.745-2.37  c0.3-2.732,1.429-4.734,4.117-5.365v-4.367l1.123-0.998L18.235,26.369z"/></svg>
-					<h3>Snakes!</h3>
-					<p>If you are bitten by a rattlesnake, <strong>remain calm and still</strong>. Dashing around allows the venom to circulate faster.</p>
-				</div> <!-- /.icons__single -->
-			</div>	<!-- /.fb-wrapper -->
+						<!--
+						SVGs can be added to a page in multiple ways. In all cases, the same principles of how to make an image accessible apply. Ask yourself what the purpose of the SVG is, then provide the appropriate information in a non-visual format
+						FURTHER READING: https://css-tricks.com/accessible-svgs/
+						-->
+						<img src="images/cactus_icon.svg" alt=" " aria-hidden="true">
 
-			<!-- 
-			Avoid all caps in HTML unless for an acronym. Not a foolproof technique given how some browsers render content, but a better practice. 
-			Natively tabbable elements
-			-->
-			<button href="" class="button" style="text-transform: uppercase;">Read More</button>
-			<!-- 
-			SOURCE: https://twitter.com/csskarma/status/770623921381081088
-			FURTHER READING: http://adrianroselli.com/2012/06/copying-content-styled-with-text.html 
-			-->
+						<!--
+						Headings must not jump levels (i.e. H2 - H4)
+						strong, em, and i elements must be used according to their specifications and not for their default styling
+						-->
+						<h3>Prickly Plants</h3>
+						<!--
+						FAILURE 1.3.1 Info and Relationships (Level A)
+						TECHNIQUE G115 & H49 Using semantic elements to mark up structure
+						-->
+						<p>Cactus may look forbidding, but  K. Satchidanandan's poem, simply titled <i>Cactus</i>, imagines they have rich inner lives</p>.
+						<!--
+						SUCCESS 1.3.1 Info and Relationships (Level A)
+						TECHNIQUE G115 & H49 Using semantic elements to mark up structure
+						FURTHER READING: https://www.w3.org/TR/WCAG20-TECHS/G115.html
+										 https://www.w3.org/TR/WCAG20-TECHS/H49.html
+						-->
 
-		</div> <!-- /.wrapper -->
-	</section> <!-- /.icons -->
+					</div> <!-- /.icons__single -->
+					<div class="icons__single">
+						<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve">
+							<path stroke="#25083F" stroke-width="0.1932" stroke-miterlimit="10" d="M7.165,22.991c2.928-1.927,6.113-1.681,9.469,0l2.899,2.705  l2.512,6.377l2.899,5.218l3.285,2.319h10.049c6.957-1.546,13.913-1.546,20.87,0h11.981l4.251-3.672l3.478-7.536l4.445-4.251  c3.279-1.272,6.703-1.249,10.242-0.193l-8.889,3.672l-3.285,7.536l-3.478,7.15l-4.058,2.705l-8.889,1.159h-5.991l0.966,3.707  l-0.386,2.477l-3.092,2.126c0.819,5.364,0.405,10.088-1.739,13.913l-1.159,6.957l0.966,2.512c-2.111,6.3-7.975,7.002-9.276,0  l0.193-3.478l-1.353-5.411c-2.057-2.996-3.65-5.857-1.739-11.015l-0.966-3.672l-2.899-2.319l-0.58-4.251l0.193-1.932l-4.831,0.386  l-7.15-0.966l-6.184-5.024l-3.478-9.276l-1.932-4.638L7.165,22.991z" fill="#000000"/>
+						</svg>
+						<h3>Fatal Dehydration</h3>
+						<p>There is <em>so</em> little water in the desert that it is imperative to bring your own supply.</p>
+					</div> <!-- /.icons__single -->
+					<div class="icons__single">
+						<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve">
+							<path fill="#000000" stroke="#010101" stroke-width="3.1859" stroke-miterlimit="10" d="M18.235,26.369l2.994-2.869h1.622  l1.996,2.869v2.37l1.996,1.372l0.624,2.246l-1.123,2.994v2.37l-0.998,3.743l-2.495,4.616l-0.624,2.62l-0.25,3.119l5.489,2.121  l7.735-2.37l3.868-2.121l6.238-1.123l5.115,1.622l3.119,2.994l1.871,2.495l3.369,0.749l3.992-0.998l0.624-2.121l-1.372-8.484  l3.369-3.244l4.866,0.873l3.369,2.35l4.367,1.268l13.973,0.873c0.869,0.421,0.795,1.062,0,1.871l-2.869,2.246l-7.86,0.998  l-3.618-0.25l-7.486-2.869l-0.624,1.372l1.123,3.618v6.113c-0.945,2.043-2.672,3.426-5.365,3.992h-6.737l-8.234-1.747  c-2.319-1.758-4.579-3.472-7.735-5.864l-5.739,1.123l-8.484,5.24l-6.488,0.125l-4.491-0.25c-2.307-0.535-4.037-2.404-5.24-5.489  l1.747-7.61l4.117-8.109l0.998-1.747l-2.37-0.873l-3.369-0.499l-2.495,3.868l-1.123,0.125l2.745-4.242l-2.745-2.37  c0.3-2.732,1.429-4.734,4.117-5.365v-4.367l1.123-0.998L18.235,26.369z"/></svg>
+						<h3>Snakes!</h3>
+						<p>If you are bitten by a rattlesnake, <strong>remain calm and still</strong>. Dashing around allows the venom to circulate faster.</p>
+					</div> <!-- /.icons__single -->
+				</div>	<!-- /.fb-wrapper -->
 
-	<!-- VIDEO SECTION -->
-	<section class="video">
-		<div class="wrapper">
+				<!--
+				Avoid all caps in HTML unless for an acronym. Not a foolproof technique given how some browsers render content, but a better practice.
+				Natively tabbable elements.
+				-->
+				<button class="button modal-toggle" style="text-transform: uppercase;">Read More</button>
+				<!--
+				SOURCE: https://twitter.com/csskarma/status/770623921381081088
+				FURTHER READING: http://adrianroselli.com/2012/06/copying-content-styled-with-text.html
+				-->
 
-			<!-- 
-			If audio plays automatically, ensure there is a mechanism available to stop, pause, or adjust the volume of the audio
-			Ensure video player isn't a keyboard trap
-			Provide captions, audio description, and/or transcript if applicable 
-			-->
-			<iframe width="1100" height="600" src="https://www.youtube.com/embed/I8W4LyIXINE" frameborder="0" allowfullscreen></iframe>
-			<!--  
-			N/A 1.4.2 Audio Control (Level A)
-			SUCCESS: 2.1.2 No Keyboard Trap (Level A)
-			FAILURE: 1.2.5 Audio Description, Pre-recorded (Level AA)
-			TECHNIQUE
-			-->
+				<!--
+					Modals should not create keyboard traps and should return focus to the same place i nthe page upon closure.
+			   -->
+				<div class="modal">
+					<h3>Join Our Cactus Club</h3>
+					<p>Looking for more information on cacti and succulents? Join our club for access to the Green Thumb Newsletter and Green Thumb workshops!</p>
+					<button class="button" id="signUp">Sign me up!</button>
+					<button class="button" id="moreInfo">More info please.</button>
+					<button class="button" id="close">No thanks.</button>
+				</div> <!-- /.modal -->
+				<div class="modal-overlay"></div>
+				<!-- SUCCESS 2.1.2 No Keyboard Trap (Level A)
+				SOURCE:
+				https://classroom.udacity.com/courses/ud891/lessons/7962031279/concepts/79621414230923#
+				-->
 
-		</div> <!-- /.wrapper -->
-	</section> <!-- /.video -->
+			</div> <!-- /.wrapper -->
+		</section> <!-- /.icons -->
 
-	<!-- GALLERY SECTION -->
-	<section class="gallery">
-		<div class="wrapper">
-			<h2>DIY Cactus Containers</h2>
-			<p>Here are a few ways to repurpose household items as cacti planters!</p>
-			<div class="container-gallery">
-				<img src="images/cactus-teacup.jpg" />
-				<img src="images/cactus-painted.jpg" />
-				<img src="images/cactus-mason.jpg" />
-			</div> <!-- /.container-gallery -->
-		</div> <!-- /.wrapper -->
-	</section>
+		<!-- VIDEO SECTION -->
+		<section class="video">
+			<div class="wrapper">
 
-	<!-- FORM SECTION -->
-	<section class="form">
-		<div class="wrapper">
-			<h2>Contact Us</h2>
-			<p>If you have questions or comments please feel free to get in touch!</p>
-			<form>
-				<div class="form-left">
-					<input type="text" placeholder="First Name"/>
-					<input type="text" placeholder="Last Name" />
-					<input type="tel" placeholder="Phone Number" />
-					<input type="email" placeholder="Email" />
-				</div> <!-- /.form-left -->
-				<div class="form-right">
-					<textarea placeholder="Your message..."></textarea>
-					<input type="submit" value="Submit"/>
-				</div> <!-- /.form-right -->
+				<!--
+				If audio plays automatically, ensure there is a mechanism available to stop, pause, or adjust the volume of the audio
+				Ensure video player isn't a keyboard trap
+				Provide captions, audio description, and/or transcript if applicable
+				-->
+				<iframe width="1100" height="600" src="https://www.youtube.com/embed/I8W4LyIXINE" frameborder="0" allowfullscreen></iframe>
+				<!--
+				N/A 1.4.2 Audio Control (Level A)
+				SUCCESS: 2.1.2 No Keyboard Trap (Level A)
+				FAILURE: 1.2.5 Audio Description, Pre-recorded (Level AA)
+				TECHNIQUE
+				-->
 
-			</form>
+			</div> <!-- /.wrapper -->
+		</section> <!-- /.video -->
 
-		</div> <!-- /.wrapper -->
-	</section> <!-- /.form -->
+		<!-- GALLERY SECTION -->
+		<section class="gallery">
+			<div class="wrapper">
+				<h2>DIY Cactus Containers</h2>
+				<p>Here are a few ways to repurpose household items as cacti planters!</p>
+
+				<!--
+
+				-->
+				<div class="container-gallery">
+					<img src="images/cactus-teacup.jpg" alt="You can repurpose a teacup as a pot for your cacti." />
+					<img src="images/cactus-painted.jpg" alt="Try painting a terra cotta pot to create a cut planter for your cactus." />
+					<img src="images/cactus-mason.jpg" alt="Turn a mason jar into a terrarium for your succulents and cacti." />
+				</div> <!-- /.container-gallery -->
+			</div> <!-- /.wrapper -->
+		</section>
+
+		<!-- FORM SECTION -->
+		<section class="form">
+			<div class="wrapper">
+				<h2>Contact Us</h2>
+				<p>If you have questions or comments please feel free to get in touch!</p>
+				<form action="submit.php" method="post" onSubmit="return validateForm()">
+					<div class="form-left">
+						<!--
+						SUCCESS 1.3.1 Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text (Level A)
+						SUCCESS 3.3.2 Labels or Instructions are provided when content requires user input (Level A)
+						SUCCESS 3.3.1 Error Identification: If an input error is automatically detected, the item that is in error is identified and the error is described to the user in text. (Level A)
+
+						SOURCE: https://www.w3.org/TR/WCAG20-TECHS/H44.html
+						FURTHER READING: http://usability.com.au/2008/09/accessible-forms-using-wcag-2-0/
+						ARIA-INVALID: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-invalid_attribute
+						-->
+						<label for="first-name">First Name</label>
+						<input id="first-name" type="text" placeholder="First Name"/>
+						<label for="last-name">Last Name</label>
+						<input id="last-name" type="text" placeholder="Last Name" />
+						<label for="tel">Phone Number</label>
+						<input id="tel" type="tel" placeholder="Phone Number" />
+						<label for="email">Your Email</label>
+						<input id="email" type="email" placeholder="Email" />
+					</div> <!-- /.form-left -->
+					<div class="form-right">
+						<label for="message">Your Message</label>
+						<p class="error-alert" role="alert" aria-live="assertive">Please include a message that outlines your question or concern.</p>
+						<textarea id="message" class="message-input" aria-invalid="false" placeholder="Your message..."></textarea>
+						<input class="submit-form" type="submit" value="Submit"/>
+					</div> <!-- /.form-right -->
+
+				</form>
+
+			</div> <!-- /.wrapper -->
+		</section> <!-- /.form -->
+	</main>
 	<!-- FOOTER -->
 	<footer>
 		<div class="wrapper">
@@ -188,5 +252,7 @@ Success 3.1.1 Language of Page (Level A)
 			<i class="fa fa-pinterest" aria-hidden="true"></i>
 		</div> <!-- /.wrapper -->
 	</footer>
+
+	<script src="scripts.js"></script>
 </body>
 </html>
