@@ -16,10 +16,10 @@ modalToggle.addEventListener('click', openModal);
 
 function openModal() {
   //Save current focus
-  //focusedElementBeforeModal = document.activeElement;
+  focusedElementBeforeModal = document.activeElement;
 
   // Listen for and trap the keyboard
-  //modal.addEventListener('keydown', trapTabKey);
+  modal.addEventListener('keydown', trapTabKey);
 
   // Listen for indicators to close modal
   modalOverlay.addEventListener('click', closeModal);
@@ -29,47 +29,48 @@ function openModal() {
   signUpBtn.addEventListener('click', closeModal);
 
   //Find all focusable children
-  //var focusableElementString = "button:not([disabled])";
+  var focusableElementString = "button:not([disabled])";
 
-  //var focusableElements = modal.querySelectorAll(focusableElementString);
+  var focusableElements = modal.querySelectorAll(focusableElementString);
 
   // Convert NodeList to Array
-  //focusableElements = Array.prototype.slice.call(focusableElements);
+  focusableElements = Array.prototype.slice.call(focusableElements);
 
-  //var firstTabStop = focusableElements[0];
-  //var lastTabStop = focusableElements[focusableElements.length -1];
+  var firstTabStop = focusableElements[0];
+  var lastTabStop = focusableElements[focusableElements.length -1];
 
   //Show modal and overlay
   modal.style.display = 'block';
   modalOverlay.style.display = 'block';
 
   //Focus first child
-  //firstTabStop.focus();
+  firstTabStop.focus();
 
-//   function trapTabKey(e){
-//     if (e.keyCode === 9) {
-//
-//       //Shift + Tab
-//       if (e.shiftKey) {
-//         if (document.activeElement === firstTabStop) {
-//           e.preventDefault();
-//           lastTabStop.focus();
-//         }
-//
-//       // Tab
-//       } else {
-//         if (document.activeElement === lastTabStop) {
-//           e.preventDefault();
-//           firstTabStop.focus();
-//         }
-//       }
-//     }
-//
-//     // Escape key
-//     if (e.keyCode === 27) {
-//       closeModal();
-//     }
-//   }
+  function trapTabKey(e){
+    console.log('trapTabKey');
+    if (e.keyCode === 9) {
+
+      //Shift + Tab
+      if (e.shiftKey) {
+        if (document.activeElement === firstTabStop) {
+          e.preventDefault();
+          lastTabStop.focus();
+        }
+
+      // Tab
+      } else {
+        if (document.activeElement === lastTabStop) {
+          e.preventDefault();
+          firstTabStop.focus();
+        }
+      }
+    }
+
+    // Escape key
+    if (e.keyCode === 27) {
+      closeModal();
+    }
+  }
 }
 
 function closeModal() {
@@ -93,7 +94,7 @@ submitBtn.addEventListener('click', validateForm);
 function validateForm() {
   event.preventDefault();
 
-  if (  messageInput.value == null || messageInput.value == "") {
+  if (messageInput.value == null || messageInput.value == "") {
     errorAlert.style.display = "block";
     messageInput.setAttribute("aria-invalid", "true");
     messageInput.focus();
