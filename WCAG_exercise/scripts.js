@@ -5,7 +5,7 @@
 
 
 // Holds Previously focused element
-//var focusedElementBeforeModal;
+var focusedElementBeforeModal;
 
 // Find the modal and it's overlay
 var modal = document.querySelector('.modal');
@@ -14,12 +14,23 @@ var modalOverlay = document.querySelector('.modal-overlay');
 var modalToggle = document.querySelector('.modal-toggle');
 modalToggle.addEventListener('click', openModal);
 
+//Find all focusable children
+var focusableElementString = "button:not([disabled])";
+
+var focusableElements = modal.querySelectorAll(focusableElementString);
+
+// Convert NodeList to Array
+focusableElements = Array.prototype.slice.call(focusableElements);
+
+var firstTabStop = focusableElements[0];
+var lastTabStop = focusableElements[focusableElements.length -1];
+
 function openModal() {
   //Save current focus
-  //focusedElementBeforeModal = document.activeElement;
+  focusedElementBeforeModal = document.activeElement;
 
   // Listen for and trap the keyboard
-  //modal.addEventListener('keydown', trapTabKey);
+  modal.addEventListener('keydown', trapTabKey);
 
   // Listen for indicators to close modal
   modalOverlay.addEventListener('click', closeModal);
@@ -28,48 +39,12 @@ function openModal() {
   var signUpBtn = modal.querySelector('#signUp');
   signUpBtn.addEventListener('click', closeModal);
 
-  //Find all focusable children
-  //var focusableElementString = "button:not([disabled])";
-
-  //var focusableElements = modal.querySelectorAll(focusableElementString);
-
-  // Convert NodeList to Array
-  //focusableElements = Array.prototype.slice.call(focusableElements);
-
-  //var firstTabStop = focusableElements[0];
-  //var lastTabStop = focusableElements[focusableElements.length -1];
-
   //Show modal and overlay
   modal.style.display = 'block';
   modalOverlay.style.display = 'block';
 
   //Focus first child
-  //firstTabStop.focus();
-
-//   function trapTabKey(e){
-//     if (e.keyCode === 9) {
-//
-//       //Shift + Tab
-//       if (e.shiftKey) {
-//         if (document.activeElement === firstTabStop) {
-//           e.preventDefault();
-//           lastTabStop.focus();
-//         }
-//
-//       // Tab
-//       } else {
-//         if (document.activeElement === lastTabStop) {
-//           e.preventDefault();
-//           firstTabStop.focus();
-//         }
-//       }
-//     }
-//
-//     // Escape key
-//     if (e.keyCode === 27) {
-//       closeModal();
-//     }
-//   }
+  firstTabStop.focus();
 }
 
 function closeModal() {
@@ -79,6 +54,41 @@ function closeModal() {
 
   // Set focus back to element user was on before modal opened
   focusedElementBeforeModal.focus();
+
+  // Listen for and trap the keyboard
+  modal.removeEventListener('keydown', trapTabKey);
+
+  // Listen for indicators to close modal
+  modalOverlay.removeEventListener('click', closeModal);
+
+  // Sign Up button
+  var signUpBtn = modal.querySelector('#signUp');
+  signUpBtn.removeEventListener('click', closeModal);
+}
+
+function trapTabKey(e){
+  if (e.keyCode === 9) {
+
+    //Shift + Tab
+    if (e.shiftKey) {
+      if (document.activeElement === firstTabStop) {
+        e.preventDefault();
+        lastTabStop.focus();
+      }
+
+    // Tab
+    } else {
+      if (document.activeElement === lastTabStop) {
+        e.preventDefault();
+        firstTabStop.focus();
+      }
+    }
+  }
+
+  // Escape key
+  if (e.keyCode === 27) {
+    closeModal();
+  }
 }
 
 
